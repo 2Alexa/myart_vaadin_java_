@@ -1,0 +1,8 @@
+INSERT INTO kuenstler (id, name, firstname, zeitepoche)
+VALUES
+(1,'Pablo','Picasso','Kubismus'),
+(2,'Vincent','van Gogh','Impressionismus'),
+(3,'Ivan','Schischkin','Realismus'),
+(4,'Walentin','Serow','Impressionismus'),
+(5,'Claude','Monet','Impressionismus'),
+(6,'Paul ','Gauguin','Impressionismus');
