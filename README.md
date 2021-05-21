@@ -1,43 +1,123 @@
 # My Art
 
-This is an example project that can be used as a starting point to create your own Vaadin application with Spring Boot.
-It contains all the necessary configuration and some placeholder files to get you started.
+<!-- PROJECT LOGO -->
+<br />
 
-The project is a standard Maven project, so you can import it to your IDE of choice. [Read more how to set up a development environment](https://vaadin.com/docs/v14/flow/installing/installing-overview.html) for Vaadin projects (Windows, Linux, macOS). 
+  <h3 align="center">My Art User Base</h3>
 
-This project was created from https://start.vaadin.com.
+  <p align="center">
+    Verwaltung von Userdaten mit Vaadin
+    <br />
+    <a href="https://github.com/2Alexa/myart_vaadin"><strong>Erkunde die Dokumentation»</strong></a>
+    <br />
+  </p>
+</p>
 
-## Running and debugging the application
 
-### Running the application from the command line.
-To run from the command line, use `mvn` and open http://localhost:8080 in your browser.
 
-### Running and debugging the application in Intellij IDEA
-- Locate the Application.java class in the Project view. It is in the src folder, under the main package's root.
-- Right-click on the Application class
-- Select "Debug 'Application.main()'" from the list
+<!-- TABLE OF CONTENTS -->
+<details open="open">
+  <summary><h2 style="display: inline-block">Inhaltsverzeichnis</h2></summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">&Uumlber das Projekt</a>
+      <ul>
+        <li><a href="#built-with">Aufbau</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Installation</a>
+      <ul>
+        <li><a href="#installation">Lass uns es starten</a></li>
+      </ul>
+    </li>
+    <li><a href="#contact">Kontakt</a></li>
+    <li><a href="#acknowledgements">Referenzen</a></li>
+  </ol>
+</details>
 
-After the application has started, you can view it at http://localhost:8080/ in your browser. 
-You can now also attach breakpoints in code for debugging purposes, by clicking next to a line number in any source file.
 
-### Running and debugging the application in Eclipse
-- Locate the Application.java class in the Package Explorer. It is in `src/main/java`, under the main package.
-- Right-click on the file and select `Debug As` --> `Java Application`.
 
-Do not worry if the debugger breaks at a `SilentExitException`. This is a Spring Boot feature and happens on every startup.
+## Über das Projekt
 
-After the application has started, you can view it at http://localhost:8080/ in your browser.
-You can now also attach breakpoints in code for debugging purposes, by clicking next to a line number in any source file.
-## Project structure
 
-- `MainView.java` in `src/main/java` contains the navigation setup. It uses [App Layout](https://vaadin.com/components/vaadin-app-layout).
-- `views` package in `src/main/java` contains the server-side Java views of your application.
-- `views` folder in `frontend/` contains the client-side JavaScript views of your application.
+In diesem Projekt werde ich mit Hilfe von Vaadin ein Frontend aufbauen. Dabei werde ich die Daten einlesen. 
+Es besteht auf die Möglichkeit Datenbank Verbindung zu erstellen.
+Auf der User View Seite werden die userdaten, wie Vorname, Nachname, Status, Email und Gefühl horizontal angezeigt.
+Das Gefühl wird als Enum an den User geheftet. 3 Enum haben wir zu verfügung.
+Gleichzeitig können wir die Userdaten abrufen, löschen und filtern.
 
-## What next?
 
-[vaadin.com](https://vaadin.com) has lots of material to help you get you started:
+### Aufbau des Codes
 
-- Follow the tutorials in [vaadin.com/tutorials](https://vaadin.com/tutorials). Especially [vaadin.com/tutorials/getting-started-with-flow](https://vaadin.com/tutorials/getting-started-with-flow) is good for getting a grasp of the basic Vaadin concepts.
-- Read the documentation in [vaadin.com/docs](https://vaadin.com/docs).
-- For a bigger Vaadin application example, check out the Full Stack App starter from [vaadin.com/start](https://vaadin.com/start).
+
+#### Entity anlegen:
+Definieren das Datenmodell:
+Stellen eine CRM-System da, um eine Verbindung mit den User und dem Gefühl zu erstellen.Erstelle 3 Entity Klassen: User, Gefühl und AbstractEntity.
+
+
+#### Repository erstellen:
+Um auf die Datenbank zuzugreifen, erstellen wir eine Schnittstelle, die den Entitätstyp und Primärschlüssel beschreibt. Hier erstellen wir 2 Klassen, für User und Gefühl.
+
+
+#### Services Klasse erstellen:
+Das UI greift nicht direkt auf die Datenbank, sondern über die Service Klassen auf die Daten. Hier erstellen wir 2 Klassen, für User und Gefühl.
+
+#### Datenbank:
+In dem Code beispiel hab ich die Daten des Users in die Klasse UserService eingefügt. Status wird über den Entity Klasse Status in der Klasse User definiert.
+
+
+#### Grid bauen:
+èber die MainView bauen wir unsere Oberfläche auf.Lese dazu einzelne Kommentare in dem Code. In dem Frontend Package findes du einfachen CSS Code, die Verbindung dazu findest du auch in dem Kommentaren in den Code der MainView.
+
+### Daten filtern:
+Hierbei muss du eine TextField in dem MainVIew unter den Grid setzen. Die confiqureFilter Methode. Definiere , dass das textFeld geleert werden soll, nach wunsch, Daten in Liste zu suchen,User zur Nutzung anweisen.
+
+
+### Installation:
+
+
+* []() instaliere Java JDK 8 ( suche auf Google java.com)
+* []() instaliere Intellij IDEA CE runter (benutzen Google um die offizielle Seite für den Intellij Download)
+* []() H2 Datenbase muss du nicht downloaden, wir benutzen den Browser, um die Daten in der H2 Datenbank zu checken
+       http://localhost:8080
+* []() instaliere Chrome (Browser, Download über anderen Browser) Wir werden die User Daten über Rested einfügen.
+       (Befolge bei Chrome,Einstellungen, Entwicklertool, Rested... oder diesen Link: 
+       chrome-extension 
+       https://eelcnbccaccipfolokglfhhmapdchbfg/dist/index.html
+* []() instaliere MYSQL (über Google den Download)
+ 
+
+
+<!-- GETTING STARTED -->
+## Lass uns es starten
+
+Das Projekt wird automatisch von start.spring.io generiert: https://start.vaadin.com/.
+
+
+Ich verweisen in application.properties, dass ich h2 Datenbank nutzen. Dort kann ich auch auf mySQL gehen(momentan ausmarkiert) auch username und password für die Datenbank anlegen. Der User und Password sind gesetzt.
+
+
+### Lass uns ausprobieren
+Starte die APplikation und geh über den http://localhost:8080
+
+
+<!-- CONTACT -->
+## Contact
+
+
+Project Link: [https://github.com/2Alexa/MyArt-Registration_Login](https://github.com/2Alexa/myart_vaadin)
+
+
+
+<!-- ACKNOWLEDGEMENTS -->
+## Referenzen
+
+* []() https://vaadin.com/docs/v14/flow/tutorials/in-depth-course
+* []() https://dzone.com/articles/how-to-connect-a-mysql-database-to-a-vaadin-applic
+* []() https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#repositories.query-methods.query-creation
+* []() https://www.jetbrains.com/help/idea/connecting-to-a-database.html
+
+
+
+
