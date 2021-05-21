@@ -30,6 +30,13 @@ public class UserServices {
     public List<User> findAll() {
         return userRepository.findAll();
     }
+    public List<User> findAll(String stringFilter) {
+        if (stringFilter == null || stringFilter.isEmpty()) {
+            return userRepository.findAll();
+        } else {
+            return userRepository.search(stringFilter);
+        }
+    }
 
     public long count() {
         return userRepository.count();
@@ -81,5 +88,7 @@ public class UserServices {
                                 return user;
                             }).collect(Collectors.toList()));
         }
+
     }
+
 }
