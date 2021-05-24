@@ -8,7 +8,7 @@
   <p align="center">
     Verwaltung von Userdaten mit Vaadin
     <br />
-    <a href="https://github.com/2Alexa/myart_vaadin"><strong>Erkunde die Dokumentation»</strong></a>
+    <a href="https://github.com/2Alexa/myart_vaadin_java_"><strong>Erkunde die Dokumentation»</strong></a>
     <br />
   </p>
 </p>
@@ -106,7 +106,7 @@ Starte die Applikation und geh über den http://localhost:8080
 ## Contact
 
 
-Project Link: [https://github.com/2Alexa/MyArt-Registration_Login](https://github.com/2Alexa/myart_vaadin)
+Project Link: [https://github.com/2Alexa/myart_vaadin_java_](https://github.com/2Alexa/myart_vaadin_java_)
 
 
 
