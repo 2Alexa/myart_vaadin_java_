@@ -42,9 +42,9 @@
 
 
 In diesem Projekt werde ich mit Hilfe von Vaadin ein Frontend aufbauen. Dabei werde ich die Daten einlesen. 
-Es besteht auf die Möglichkeit Datenbank Verbindung zu erstellen.
-Auf der User View Seite werden die userdaten, wie Vorname, Nachname, Status, Email und Gefühl horizontal angezeigt.
-Das Gefühl wird als Enum an den User geheftet. 3 Enum haben wir zu verfügung.
+Es besteht auch die Möglichkeit Datenbank Verbindung zu erstellen.
+Auf der User View Seite werden die Userdaten, wie Vorname, Nachname, Status, Email und Gefühl horizontal angezeigt.
+Das Gefühl wird als Enum an den User geheftet. 3 Enum haben wir zu Verfügung.
 Gleichzeitig können wir die Userdaten abrufen, löschen und filtern.
 
 
@@ -53,7 +53,7 @@ Gleichzeitig können wir die Userdaten abrufen, löschen und filtern.
 
 #### Entity anlegen:
 Definieren das Datenmodell:
-Stellen eine CRM-System da, um eine Verbindung mit den User und dem Gefühl zu erstellen.Erstelle 3 Entity Klassen: User, Gefühl und AbstractEntity.
+Stellen eine CRM-System da, um eine Verbindung mit den User und dem Gefühl zu erstellen. Erstelle 3 Entity Klassen: User, Gefühl und AbstractEntity.
 
 
 #### Repository erstellen:
@@ -64,14 +64,14 @@ Um auf die Datenbank zuzugreifen, erstellen wir eine Schnittstelle, die den Enti
 Das UI greift nicht direkt auf die Datenbank, sondern über die Service Klassen auf die Daten. Hier erstellen wir 2 Klassen, für User und Gefühl.
 
 #### Datenbank:
-In dem Code beispiel hab ich die Daten des Users in die Klasse UserService eingefügt. Status wird über den Entity Klasse Status in der Klasse User definiert.
+In dem Code Beispiel hab ich die Daten des Users in die Klasse UserService eingefügt. Status wird über den Entity Klasse: Status in der Klasse User definiert.
 
 
 #### Grid bauen:
-èber die MainView bauen wir unsere Oberfläche auf.Lese dazu einzelne Kommentare in dem Code. In dem Frontend Package findes du einfachen CSS Code, die Verbindung dazu findest du auch in dem Kommentaren in den Code der MainView.
+Über die MainView  Klasse bauen wir unsere Oberfläche auf. Lese dazu einzelne Kommentare in dem Code. In dem Frontend Package findes du einfachen CSS Code, die Beschreibung dazu findest du auch in dem Kommentaren in den Code der MainView.
 
 ### Daten filtern:
-Hierbei muss du eine TextField in dem MainVIew unter den Grid setzen. Die confiqureFilter Methode. Definiere , dass das textFeld geleert werden soll, nach wunsch, Daten in Liste zu suchen,User zur Nutzung anweisen.
+Hierbei muss du eine TextField in dem MainView unter den Grid setzen. Die confiqureFilter Methode definiere , dass das Feld textFeld geleert werden soll, nach Wunsch, Daten in Liste zu suchen und User zur Nutzung anweisen.
 
 
 ### Installation:
@@ -85,7 +85,7 @@ Hierbei muss du eine TextField in dem MainVIew unter den Grid setzen. Die confiq
        (Befolge bei Chrome,Einstellungen, Entwicklertool, Rested... oder diesen Link: 
        chrome-extension 
        https://eelcnbccaccipfolokglfhhmapdchbfg/dist/index.html
-* []() instaliere MYSQL (über Google den Download)
+* []() instaliere MYSQL Workbench (über Google den Download)
  
 
 
@@ -99,7 +99,7 @@ Ich verweisen in application.properties, dass ich h2 Datenbank nutzen. Dort kann
 
 
 ### Lass uns ausprobieren
-Starte die APplikation und geh über den http://localhost:8080
+Starte die Applikation und geh über den http://localhost:8080
 
 
 <!-- CONTACT -->
