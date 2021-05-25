@@ -5,18 +5,18 @@ import com.example.application.backend.entity.User;
 import com.example.application.backend.service.UserServices;
 import com.vaadin.flow.component.grid.Grid;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+import com.vaadin.flow.component.textfield.TextField;
+import com.vaadin.flow.data.value.ValueChangeMode;
 import com.vaadin.flow.router.Route;
-
-import java.awt.*;
 
 @Route("")
 public class MainView extends VerticalLayout {
 
     private UserServices userServices;
     //neues Fensterraster definieren
-    private Grid<User> grid = new Grid<>(User.class);
+    Grid<User> grid = new Grid<>(User.class);
     //Textfeld erstellt
-    private TextField filterText = new TextField();
+    TextField filterText = new TextField();
 
 
 
@@ -25,10 +25,12 @@ public class MainView extends VerticalLayout {
         addClassName("list-view");
         setSizeFull();
         configureGrid();
+        configureFilter();
 
-        add(grid);
+        add(filterText,grid);
         updateList();
     }
+
 
     private void updateList() {
         grid.setItems(userServices.findAll());
@@ -46,6 +48,12 @@ public class MainView extends VerticalLayout {
         grid.getColumns().forEach(col -> col.setAutoWidth(true));// aktiviert automatische spaltenbreite
 
     }
+    private void configureFilter() {
+        filterText.setPlaceholder("Filter bei Name...");
+        filterText.setClearButtonVisible(true);
+        filterText.setValueChangeMode(ValueChangeMode.LAZY);
+    }
+
 }
 
 
